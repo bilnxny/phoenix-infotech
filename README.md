@@ -1,63 +1,105 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/bilnxny/phoenix-infotech/main/.github/logo.svg" width="72" alt="Phoenix Infotech" />
+
 # Phoenix Infotech
 
-> Ethical hacking, penetration testing and red team operations — based in Ernakulam, Kerala.
+**Ethical hacking · Penetration testing · Red team operations**
 
-Phoenix Infotech is an offensive security firm serving clients across Kerala and India. We find the vulnerabilities automated scanners miss — and prove they're actually exploitable with real proof-of-concept evidence.
+Based in Ernakulam, Kerala — serving India, the UAE and Singapore.
 
-**🌐 Live site:** https://<your-username>.github.io/phoenix-infotech/
+[![Live Site](https://img.shields.io/badge/live-phoenix--infotech-FF5C1A?style=flat-square)](https://bilnxny.github.io/phoenix-infotech/)
+[![License](https://img.shields.io/badge/license-Proprietary-232329?style=flat-square)](#license)
+[![Made with](https://img.shields.io/badge/built%20with-HTML%20%7C%20CSS%20%7C%20JS-FF5C1A?style=flat-square)](#tech-stack)
+[![Animations](https://img.shields.io/badge/animations-enabled-22C55E?style=flat-square)](#-animation-system)
 
----
-
-## What we do
-
-| Service | Description |
-|---|---|
-| **Penetration Testing** | Manual, adversary-driven testing of web apps, APIs, mobile clients and internal networks |
-| **Red Team Operations** | Full adversary simulation — initial access through to domain admin |
-| **Bug Bounty Programs** | Managed crowd-sourced security on HackerOne, Bugcrowd or private platforms |
-| **Security Audits** | OWASP, ISO 27001, PCI-DSS and DPDP Act compliance reviews |
-| **OSINT & Threat Intel** | External attack surface mapping, credential leak checks, dark web monitoring |
-| **Security Training** | Hands-on labs for developers, SOC analysts and IT teams |
+</div>
 
 ---
 
-## Service areas
+## Table of contents
 
-**Kerala:** Kochi · Ernakulam · Thrissur · Trivandrum · Kozhikode · Kollam · Alappuzha · Kannur · Palakkad · Malappuram · Kottayam · Pathanamthitta · Idukki · Wayanad · Kasaragod
-
-**Also serving:** India · UAE · Singapore (remote engagements)
+- [Overview](#overview)
+- [Live demo](#live-demo)
+- [Tech stack](#tech-stack)
+- [Animation system](#-animation-system)
+- [Project structure](#project-structure)
+- [Local development](#local-development)
+- [Deployment](#deployment)
+- [SEO & structured data](#-seo--structured-data)
+- [Accessibility](#-accessibility)
+- [Performance](#-performance)
+- [Customisation guide](#customisation-guide)
+- [Legal notice](#legal-notice)
+- [License](#license)
 
 ---
 
-## Pricing
+## Overview
 
-| Tier | Starting from | Best for |
+Phoenix Infotech is a single-page marketing site for an offensive-security firm. It is:
+
+- **Zero-build** — plain HTML, CSS and vanilla JavaScript. No bundler, no framework, no `npm install`.
+- **Mobile-first** — fully responsive from 320px up.
+- **Animated** — a cohesive motion system built on native CSS transitions, `IntersectionObserver` and `requestAnimationFrame`.
+- **SEO-ready** — Schema.org structured data, Open Graph, geo-targeted meta for Kerala and India.
+- **Accessible** — keyboard navigable, semantic HTML, honours `prefers-reduced-motion`.
+
+The entire site ships as a **single `index.html`** file. Nothing needs compiling.
+
+---
+
+## Live demo
+
+🌐 **https://bilnxny.github.io/phoenix-infotech/**
+
+---
+
+## Tech stack
+
+| Layer | Choice | Why |
 |---|---|---|
-| **Essential** | ₹45,000 | Single web app, startups |
-| **Professional** | ₹1,20,000 | Web + API + mobile + internal network |
-| **Enterprise** | ₹4,00,000+ | Full red team, managed bug bounty |
+| Markup | Semantic HTML5 | Fast, accessible, indexable |
+| Styling | Vanilla CSS with custom properties | No build step, instant theming |
+| Scripting | Vanilla ES2019+ JavaScript | No dependencies, tiny footprint |
+| Fonts | Inter + JetBrains Mono (Google Fonts) | Clean UI + technical accents |
+| Icons | Font Awesome 6 (CDN) | Consistent icon language |
+| Animation | CSS transitions + `IntersectionObserver` + `requestAnimationFrame` | GPU-accelerated, jank-free |
+| Hosting | GitHub Pages | Free, HTTPS, auto-deploy on push |
 
-Final quotes depend on scope and complexity. Every engagement includes a signed NDA.
-
----
-
-## Contact
-
-- **Phone / WhatsApp:** [+91 97477 53231](https://wa.me/919747753231)
-- **Based in:** Ernakulam, Kerala, India
-- **Response time:** Within 12 hours (24/7 for enterprise)
+**No dependencies. No node_modules. No build pipeline.**
 
 ---
 
-## About this repository
+## ✨ Animation system
 
-This repo contains the source for the Phoenix Infotech website — a static single-page site served via GitHub Pages.
+Every animation is native — no GSAP, no Framer Motion, no scroll libraries. The whole motion layer adds under 15 KB of unminified JS.
 
-**Stack:**
-- Plain HTML, CSS and vanilla JavaScript — no build step, no frameworks
-- Google Fonts (Inter, JetBrains Mono)
-- Font Awesome 6 icons
-- Schema.org structured data for local SEO
-- Fully responsive, mobile-first
+### 1. Page load
 
-**File structure:**
+| Element | Animation | Implementation |
+|---|---|---|
+| Scroll progress bar | Accent-gradient fill tracking scroll % | Fixed 2px bar, width updated on `scroll` |
+| Preloader | SVG stroke-draw of the phoenix mark + rotating ring + bar fill | `stroke-dasharray` + `@keyframes spin` |
+| Preloader exit | Fade + visibility transition | `.done` class, `opacity` + `visibility` |
+
+### 2. Hero section
+
+| Effect | Description |
+|---|---|
+| **Drifting orbs** | Three blurred radial-gradient circles drifting on 18s/22s/26s loops |
+| **Animated grid** | 64px accent-tinted grid slowly scrolling diagonally, masked with a radial fade |
+| **Mouse-follow glow** | A soft accent halo tracking the cursor with lerped interpolation |
+| **Orb parallax** | Orbs shift subtly based on mouse position (depth-weighted, disabled on touch) |
+| **Word-by-word title reveal** | Each word fades in with a `rotateX(-40deg)` → `0deg` transform, staggered 55ms apart |
+| **Live badge ping** | Green status dot pulses with an expanding ring (`@keyframes ping`) |
+
+### 3. Scroll reveals
+
+Four reveal variants, all triggered by a single `IntersectionObserver`:
+
+```css
+.rv          → fade + slide up
+.rv-left     → fade + slide from left
+.rv-right    → fade + slide from right
+.rv-scale    → fade + scale from 94%
