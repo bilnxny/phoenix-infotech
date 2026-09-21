@@ -1,105 +1,186 @@
-<div align="center">
 
-<img src="https://raw.githubusercontent.com/bilnxny/phoenix-infotech/main/.github/logo.svg" width="72" alt="Phoenix Infotech" />
+### Phase 1 — Reconnaissance
+Passive and active enumeration of your attack surface. Subdomain discovery, endpoint mapping, credential leak checks, service fingerprinting, technology stack identification.
 
-# Phoenix Infotech
+### Phase 2 — Exploitation
+Manual exploitation of identified weaknesses. We chain low-severity findings into high-impact attack paths — the same way a real adversary would. Every finding ships with a working proof-of-concept.
 
-**Ethical hacking · Penetration testing · Red team operations**
+### Phase 3 — Reporting
+Two reports per engagement. An **executive summary** for leadership (risk, business impact, prioritised remediation). A **technical deep-dive** for engineers (reproduction steps, payloads, evidence, fix guidance).
 
-Based in Ernakulam, Kerala — serving India, the UAE and Singapore.
+### Phase 4 — Retest
+After remediation, we return. Free retest within **30 days** of the initial report to confirm every vulnerability is actually closed.
 
-[![Live Site](https://img.shields.io/badge/live-phoenix--infotech-FF5C1A?style=flat-square)](https://bilnxny.github.io/phoenix-infotech/)
-[![License](https://img.shields.io/badge/license-Proprietary-232329?style=flat-square)](#license)
-[![Made with](https://img.shields.io/badge/built%20with-HTML%20%7C%20CSS%20%7C%20JS-FF5C1A?style=flat-square)](#tech-stack)
-[![Animations](https://img.shields.io/badge/animations-enabled-22C55E?style=flat-square)](#-animation-system)
-
-</div>
+**Critical findings** are escalated to you within **4 hours** of discovery — mid-engagement, not after.
 
 ---
 
-## Table of contents
+## 📋 Engagement Tiers
 
-- [Overview](#overview)
-- [Live demo](#live-demo)
-- [Tech stack](#tech-stack)
-- [Animation system](#-animation-system)
-- [Project structure](#project-structure)
-- [Local development](#local-development)
-- [Deployment](#deployment)
-- [SEO & structured data](#-seo--structured-data)
-- [Accessibility](#-accessibility)
-- [Performance](#-performance)
-- [Customisation guide](#customisation-guide)
-- [Legal notice](#legal-notice)
-- [License](#license)
+| Tier | Starting price | Scope | Typical duration |
+|---|---|---|---|
+| **Essential** | ₹45,000 | Single web application · external VAPT · OWASP Top 10 · OSINT footprint | 5–7 days |
+| **Professional** | ₹1,20,000 | Web + API + mobile · internal network · Active Directory · compliance mapping | 10–14 days |
+| **Enterprise** | ₹4,00,000+ | Full red team operation · adversary simulation · managed bug bounty · purple team | 3–6 weeks |
 
----
+All tiers include:
+- Signed NDA and written rules of engagement
+- Manual testing (never scanner-only)
+- Working proof-of-concept per finding
+- Executive + technical report
+- Free retest within 30 days
 
-## Overview
-
-Phoenix Infotech is a single-page marketing site for an offensive-security firm. It is:
-
-- **Zero-build** — plain HTML, CSS and vanilla JavaScript. No bundler, no framework, no `npm install`.
-- **Mobile-first** — fully responsive from 320px up.
-- **Animated** — a cohesive motion system built on native CSS transitions, `IntersectionObserver` and `requestAnimationFrame`.
-- **SEO-ready** — Schema.org structured data, Open Graph, geo-targeted meta for Kerala and India.
-- **Accessible** — keyboard navigable, semantic HTML, honours `prefers-reduced-motion`.
-
-The entire site ships as a **single `index.html`** file. Nothing needs compiling.
+Final quotes depend on scope, complexity and timeline. **Fixed-price** proposals — no hourly billing surprises.
 
 ---
 
-## Live demo
+## 🌍 Coverage
 
-🌐 **https://bilnxny.github.io/phoenix-infotech/**
+<table>
+<tr>
+<td valign="top" width="50%">
+
+### On-site across Kerala
+- Ernakulam *(headquarters)*
+- Kochi
+- Thrissur
+- Trivandrum
+- Kozhikode
+- Kollam
+- Alappuzha
+- Kannur
+- Palakkad · Malappuram · Kottayam · Pathanamthitta · Idukki · Wayanad · Kasaragod
+
+</td>
+<td valign="top" width="50%">
+
+### Remote engagements
+- **India** — Bengaluru · Mumbai · Delhi NCR · Hyderabad · Chennai · Pune
+- **Middle East** — UAE · Qatar · Saudi Arabia
+- **Southeast Asia** — Singapore · Malaysia
+- **Oceania** — Australia · New Zealand
+
+</td>
+</tr>
+</table>
 
 ---
 
-## Tech stack
+## 🔐 Responsible Disclosure
 
-| Layer | Choice | Why |
-|---|---|---|
-| Markup | Semantic HTML5 | Fast, accessible, indexable |
-| Styling | Vanilla CSS with custom properties | No build step, instant theming |
-| Scripting | Vanilla ES2019+ JavaScript | No dependencies, tiny footprint |
-| Fonts | Inter + JetBrains Mono (Google Fonts) | Clean UI + technical accents |
-| Icons | Font Awesome 6 (CDN) | Consistent icon language |
-| Animation | CSS transitions + `IntersectionObserver` + `requestAnimationFrame` | GPU-accelerated, jank-free |
-| Hosting | GitHub Pages | Free, HTTPS, auto-deploy on push |
+Phoenix Infotech maintains a formal responsible disclosure policy. If you believe you have discovered a vulnerability in any system we operate or maintain, please report it to us privately before disclosing publicly.
 
-**No dependencies. No node_modules. No build pipeline.**
+**Report to:** `security@phoenixinfotech.in` *(or via [WhatsApp](https://wa.me/919747753231) for urgent issues)*
 
----
+**Our commitments:**
 
-## ✨ Animation system
-
-Every animation is native — no GSAP, no Framer Motion, no scroll libraries. The whole motion layer adds under 15 KB of unminified JS.
-
-### 1. Page load
-
-| Element | Animation | Implementation |
-|---|---|---|
-| Scroll progress bar | Accent-gradient fill tracking scroll % | Fixed 2px bar, width updated on `scroll` |
-| Preloader | SVG stroke-draw of the phoenix mark + rotating ring + bar fill | `stroke-dasharray` + `@keyframes spin` |
-| Preloader exit | Fade + visibility transition | `.done` class, `opacity` + `visibility` |
-
-### 2. Hero section
-
-| Effect | Description |
+| Commitment | Timeline |
 |---|---|
-| **Drifting orbs** | Three blurred radial-gradient circles drifting on 18s/22s/26s loops |
-| **Animated grid** | 64px accent-tinted grid slowly scrolling diagonally, masked with a radial fade |
-| **Mouse-follow glow** | A soft accent halo tracking the cursor with lerped interpolation |
-| **Orb parallax** | Orbs shift subtly based on mouse position (depth-weighted, disabled on touch) |
-| **Word-by-word title reveal** | Each word fades in with a `rotateX(-40deg)` → `0deg` transform, staggered 55ms apart |
-| **Live badge ping** | Green status dot pulses with an expanding ring (`@keyframes ping`) |
+| Acknowledge receipt | Within **24 hours** |
+| Initial triage & severity assessment | Within **72 hours** |
+| Remediation plan shared with reporter | Within **7 days** |
+| Public disclosure (coordinated) | After fix, by mutual agreement |
 
-### 3. Scroll reveals
+**In scope:** Our website, client portal, email infrastructure and any system under the `phoenixinfotech.in` domain.
 
-Four reveal variants, all triggered by a single `IntersectionObserver`:
+**Out of scope:** Third-party services we use, social engineering of staff, physical attacks, denial-of-service testing, automated scanner output without proof-of-exploitability.
 
-```css
-.rv          → fade + slide up
-.rv-left     → fade + slide from left
-.rv-right    → fade + slide from right
-.rv-scale    → fade + scale from 94%
+We do **not** pursue legal action against good-faith researchers who follow this policy. We do **not** offer monetary bounties for our own infrastructure — but we credit researchers publicly (with permission).
+
+---
+
+## ⚖️ Ethics & Legal Framework
+
+Phoenix Infotech operates strictly within the bounds of Indian and international law.
+
+### What we do
+- Test **only** systems the client owns or has explicit written authorisation to test
+- Begin every engagement with a signed **Non-Disclosure Agreement (NDA)**
+- Define a written **Rules of Engagement (RoE)** document specifying scope, timing, and prohibited actions
+- Handle all client data under strict confidentiality
+- Report findings responsibly, even after engagement ends
+- Maintain professional indemnity insurance
+
+### What we will never do
+- Access systems without written authorisation
+- Offer "hacking" services for unauthorised access
+- Recover stolen accounts, emails or social media profiles — this is not a service we provide
+- Conduct espionage, surveillance or competitive intelligence against third parties
+- Engage in black hat activity of any kind
+
+### Legal notice
+Unauthorised access to computer systems is a criminal offence under **India's Information Technology Act, 2000** (Sections 43, 66, 66B–66F) and comparable legislation worldwide. Any individual or firm offering "hacker for hire" services for unauthorised purposes is committing a criminal act. **Phoenix Infotech does not, and will never, participate in or facilitate such activity.**
+
+If you have a security concern that falls outside legitimate testing — for example, you suspect you have already been breached — we offer **authorised incident response** on systems you can prove ownership of.
+
+---
+
+## 🧭 Guiding Principles
+
+> **01 — Authorisation before access.**
+> No system is tested without explicit, written permission from its owner.
+
+> **02 — Manual over automated.**
+> Scanners find noise. Humans find impact. We deliver findings that matter.
+
+> **03 — Proof over theory.**
+> Every finding is proven exploitable. No "theoretical" risk claims.
+
+> **04 — Confidentiality is default.**
+> Client work is never discussed, referenced or reused — including in our own marketing — without written consent.
+
+> **05 — Retest, don't hand-wave.**
+> We return to verify fixes. Closing findings on paper is not closing findings.
+
+> **06 — Report in plain language.**
+> Engineers need detail. Executives need business impact. We write for both.
+
+---
+
+## 👥 Who We Work With
+
+- **Financial services** — fintech, payment gateways, NBFCs, cooperative banks
+- **Healthcare** — hospitals, diagnostic labs, healthtech platforms (HIPAA-aware)
+- **E-commerce & SaaS** — platforms handling customer data at scale
+- **Manufacturing** — OT-adjacent IT networks, ERP systems, supply chains
+- **Education** — universities, edtech platforms, student data custodians
+- **Government-adjacent** — public sector vendors and regulated entities
+
+If your organisation stores, processes or transmits sensitive data, you are a target. If you handle payment card data, patient records or personally identifiable information, regulation already requires you to test — with or without an incident.
+
+---
+
+## 💬 Client Feedback
+
+> *"Phoenix found a critical vulnerability that two other firms missed. Their report was detailed enough that our CTO used it to justify a full security overhaul."*
+> — **Rahul K.**, CTO · Fintech · Kochi
+
+> *"We hired them for a red team operation. Eleven hours later they were domain admin. That's the kind of wake-up call every manufacturer needs."*
+> — **Suresh M.**, Head of IT · Manufacturing · Thrissur
+
+> *"Professional, blunt, and fast. The proof-of-concept exploits made the impact undeniable. No arguments, just fixes. Worth every rupee."*
+> — **Anjali P.**, Security Lead · E-commerce · Bengaluru
+
+Full references available on request under NDA.
+
+---
+
+## 🖥️ About This Repository
+
+This repository hosts the Phoenix Infotech marketing website — a **static single-page site** served via GitHub Pages.
+
+### Technology stack
+
+| Layer | Choice |
+|---|---|
+| Markup | Semantic HTML5 |
+| Styling | Vanilla CSS with custom properties |
+| Scripting | Vanilla JavaScript (ES2019+) |
+| Fonts | Inter · JetBrains Mono (Google Fonts) |
+| Icons | Font Awesome 6 (CDN) |
+| Animation | Native CSS transitions + `IntersectionObserver` + `requestAnimationFrame` |
+| Hosting | GitHub Pages |
+
+**No build step. No dependencies. No framework. One file.**
+
+### Project structure
